@@ -1,7 +1,5 @@
 <div id="post_content">  
-    <h1 class='title'>
-        <%= @post.title %>
-    </h1>
+    <h1 class='title'><%= @post.title %></h1>
     
     <p class='date'>
         Submitted <%= time_ago_in_words(@post.created_at) %> Ago
@@ -13,11 +11,9 @@
         <%= @post.body %>
     </p>
     
-    <div class="comments">
+    <div id="comments">
         <h2><%= @post.comments.count %> Comments</h2>
-        <hr>
         <%= render @post.comments %>
-        <hr>
         <h3>Add a Comment</h3>
         <%= render 'comments/form' %>
     </div>
